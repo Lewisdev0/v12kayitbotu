@@ -9,17 +9,17 @@ exports.run = (client, message, args) => {
   } else {
     let member = message.mentions.users.first() || client.users.cache.get(args.join(' '))
       if(!member) return message.channel.send("Bir kullanıcı girin.")
-    const c = message.guild.member(member)
+    const lewis = message.guild.member(member)
     const nick = args[1];
     const yas = args[2];
       if(!nick) return message.channel.send("**Kayıt Edebilmem İçin Bir İsim Girmelisin.**")
       if(!yas) return message.channel.send("**Kayıt Edebilmem İçin Bir Yaş Girmelisin.**")
-    c.roles.add(kayıterkek)
-    c.roles.remove(misafir)
-    c.setNickname(`${tag} ${nick} , ${yas}`)
+    lewis.roles.add(kayıterkek)
+    lewis.roles.remove(misafir)
+    lewis.setNickname(`${tag} ${nick} , ${yas}`)
      const yolla = new Discord.MessageEmbed()
     .setDescription(`
-Kaydı Yapılan Üye: **${c.user.tag}**
+Kaydı Yapılan Üye: **${lewis.user.tag}**
 Değiştirilen İsim: ${tag} ${nick} | ${yas}
 Verilen Rol: ${kayıterkek}
 `)
@@ -40,4 +40,3 @@ exports.help = {
   description: "",
   usage: ""
 };
-   
