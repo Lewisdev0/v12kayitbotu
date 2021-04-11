@@ -12,7 +12,7 @@ module.exports = client => {
   client.user.setStatus("online"); //botun durumu online = çevrimiçi,idle = boşta,dnd = rahatsız etmeyin
   var oyun = [
     "YAZI 1",
-    "YAZI 2"//buraları doldurun hareketli oynuyor moruk :D
+    "YAZI 2"//buraları doldurun degişen oynuyor moruk :D
 
   ];
 
