@@ -10,42 +10,24 @@ exports.run = (client, message, args) => {
   } else {
     let member = message.mentions.users.first() || client.users.cache.get(args.join(' '))
       if(!member) return message.channel.send("Bir kullanıcı girin.")
-    const c = message.guild.member(member)
+    const lewis = message.guild.member(member)
     const nick = args[1];
     const yas = args[2];
-      if(!nick) return message.channel.send("**Kayıt Edebilmem İçin Bir ``İsim`` Girmelisin.**")
-      if(!yas) return message.channel.send("**Kayıt Edebilmem İçin Bir ``Yaş`` Girmelisin.**")
-    c.roles.add(kızkayıt)
-    c.roles.remove(misafir)
-    c.setNickname(`${tag} ${nick} | ${yas}`)
-        const ardabey = new Discord.MessageEmbed()
+      if(!nick) return message.channel.send("**Kayıt Edebilmem İçin Bir İsim Girmelisin.**")
+      if(!yas) return message.channel.send("**Kayıt Edebilmem İçin Bir Yaş Girmelisin.**")
+    lewis.roles.add(kızkayıt)
+    lewis.roles.remove(misafir)
+    lewis.setNickname(`${tag} ${nick} | ${yas}`)
+        const lewisbey = new Discord.MessageEmbed()
     .setDescription(`
-• Kaydı Yapılan Üye: **${c.user.tag}**
+• Kaydı Yapılan Üye: **${lewis.user.tag}**
 • Değiştirilen İsim: ${tag} ${nick} | ${yas}
 • Verilen Rol: ${kızkayıt}
 `)
          .setFooter('BOT ADI Kayıt Sistemi')
-     message.channel.send(ardabey)
+     message.channel.send(lewisbey)
     
     
-
-    const anan = new Discord.MessageEmbed()
-    .setDescription(`
-**Bir Kadın Üye Kayıt Oldu! Aşağıda Bilgiler Yazmakta.**
-
-• Kaydı Yapılan Üye: **${c.user.tag}**
-• Kaydı Yapan Yetkili: **${message.author.tag}**
-• Değiştirilen İsim: ${tag} ${nick} | ${yas}
-
-**Rol Bilgileri Aşağıda Yazmakta.**
-
-• Verilen Rol: ${kızkayıt}
-• Alınan Rol: ${misafir}
-
-`)
-    .setFooter('BOT ADI Kayıt Sistemi')
-   .setColor('BLUE')
-    log.send(anan)
   }
 }
 exports.conf = {
@@ -59,4 +41,3 @@ exports.help = {
   description: "",
   usage: ""
 };
-   
